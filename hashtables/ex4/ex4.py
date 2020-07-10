@@ -2,9 +2,15 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # construct a dict with the keys being numbers in a
+    d = {}
+    res = []
+    for n in a:
+        if -n in d:
+            res.append(abs(n))
+        d[n] = None
 
-    return result
+    return res
 
 
 if __name__ == "__main__":
