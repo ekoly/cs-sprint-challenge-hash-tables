@@ -1,8 +1,17 @@
+from collections import defaultdict
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # construct dictionary of numbers to count
+    n2c = defaultdict(lambda: 0)
+
+    for array in arrays:
+        for n in array:
+            n2c[n] += 1
+
+    result = [k for k, v in n2c.items() if v == len(arrays)]
 
     return result
 
