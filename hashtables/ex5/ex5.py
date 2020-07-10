@@ -1,13 +1,20 @@
 # Your code here
-
-
+from collections import defaultdict
 
 def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # construct a dict of filenames to paths
+    filed = defaultdict(lambda: [])
+    for file in files:
+        filed[file.split("/")[-1]].append(file)
 
+    # determine if each query is in the dict
+    result = []
+    for query in queries:
+        if query in filed:
+            result.extend(filed[query])
     return result
 
 
